@@ -21,4 +21,25 @@ module Exercise4 (
     output logic [7:0] out
 );
 
+always_comb begin 
+
+if (!cs) begin
+  out = 8'b0;   //because if cs is 0 we just want ou to be 0
+end
+else begin
+  case (sel)
+            0: out = alpha;
+            1: out = beta;
+            2: out = gamma;
+            default: out = 8'b0;
+        endcase
+end
+end
+
 endmodule
+
+
+
+
+
+
